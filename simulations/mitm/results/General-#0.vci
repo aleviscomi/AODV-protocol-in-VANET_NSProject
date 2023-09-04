@@ -1,0 +1,894 @@
+file 259585 1684278462                                          
+version 2
+run General-0-20230517-01:07:38-4372
+attr configname General
+attr datetime 20230517-01:07:38
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Scenario
+attr processid 4372
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.normal_car[*].ipv4.arp.typename "\"Arp\""
+param *.normal_car[1].numApps 1
+param *.normal_car[1].app[0].typename "\"UdpBasicApp\""
+param *.normal_car[1].app[0].destAddresses "\"normal_car[4]\""
+param *.normal_car[1].app[0].localPort 5000
+param *.normal_car[1].app[0].destPort 5000
+param *.normal_car[1].app[0].messageLength 1024B
+param *.normal_car[1].app[0].sendInterval 1s
+param *.normal_car[1].app[0].startTime 20s
+param *.normal_car[1].app[0].packetName "\"UDPData\""
+param *.normal_car[*].numApps 1
+param *.normal_car[*].app[0].typename "\"UdpSink\""
+param *.normal_car[*].app[0].localPort 5000
+param *.normal_car[*].routing.deletePeriod 5s
+param *.*_car[*].wlan[*].typename "\"AckingWirelessInterface\""
+param *.*_car[*].wlan[*].bitrate 2Mbps
+param *.*_car[*].wlan[*].mac.headerLength 23B
+param *.*_car[*].wlan[*].radio.typename "\"UnitDiskRadio\""
+param *.*_car[*].wlan[*].radio.transmitter.headerLength 96b
+param *.*_car[*].wlan[*].radio.transmitter.communicationRange 120m
+param *.*_car[*].wlan[*].radio.transmitter.interferenceRange 0m
+param *.*_car[*].wlan[*].radio.transmitter.detectionRange 0m
+param *.*_car[*].wlan[*].radio.receiver.ignoreInterference true
+param *.*_car[*].ipv4.configurator.typename "\"HostAutoConfigurator\""
+param *.*_car[*].ipv4.configurator.interfaces "\"wlan0\""
+param *.*_car[*].ipv4.configurator.mcastGroups "\"224.0.0.1\""
+param *.*_car[*].mobility.typename "\"VeinsInetMobility\""
+param *.manager.updateInterval 0.1s
+param *.manager.launchConfig "xmldoc(\"arcavacatamap.launchd.xml\")"
+param *.manager.moduleType "\"normal_car=networkprojectvanet.veins_inet.AodvCar *=networkprojectvanet.veins_inet.AodvCar\""
+param *.manager.moduleDisplayString "\"normal_car='i=veins/node/car;is=vs' *='i=veins/node/car;is=vs'\""
+param *.manager.moduleName "\"normal_car=normal_car *=normal_car\""
+param *.*_car[*].wlan[0].radio.energyConsumer.typename "\"StateBasedEpEnergyConsumer\""
+param *.*_car[*].wlan[0].radio.energyConsumer.offPowerConsumption 0mW
+param *.*_car[*].wlan[0].radio.energyConsumer.sleepPowerConsumption 1mW
+param *.*_car[*].wlan[0].radio.energyConsumer.switchingPowerConsumption 1mW
+param *.*_car[*].wlan[0].radio.energyConsumer.receiverIdlePowerConsumption 2mW
+param *.*_car[*].wlan[0].radio.energyConsumer.receiverBusyPowerConsumption 5mW
+param *.*_car[*].wlan[0].radio.energyConsumer.receiverReceivingPowerConsumption 10mW
+param *.*_car[*].wlan[0].radio.energyConsumer.transmitterIdlePowerConsumption 2mW
+param *.*_car[*].wlan[0].radio.energyConsumer.transmitterTransmittingPowerConsumption 100mW
+param *.*_car[*].energyStorage.typename "\"IdealEpEnergyStorage\""
+param *.*_car[*].wlan[0].radio.displayCommunicationRange true
+param *.visualizer.networkRouteVisualizer.displayRoutes true
+
+vector 0 Scenario.normal_car[0].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 1 Scenario.normal_car[0].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 2 Scenario.normal_car[0].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 Scenario.normal_car[0].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 4 Scenario.normal_car[0].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 5 Scenario.normal_car[0].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 6 Scenario.normal_car[1].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 7 Scenario.normal_car[1].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 8 Scenario.normal_car[1].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 9 Scenario.normal_car[1].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 10 Scenario.normal_car[1].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 11 Scenario.normal_car[1].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 12 Scenario.normal_car[2].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 13 Scenario.normal_car[2].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 14 Scenario.normal_car[2].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 15 Scenario.normal_car[2].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 16 Scenario.normal_car[2].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 17 Scenario.normal_car[2].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 18 Scenario.normal_car[3].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 19 Scenario.normal_car[3].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 20 Scenario.normal_car[3].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 21 Scenario.normal_car[3].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 22 Scenario.normal_car[3].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 23 Scenario.normal_car[3].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 24 Scenario.normal_car[4].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 25 Scenario.normal_car[4].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 26 Scenario.normal_car[4].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 27 Scenario.normal_car[4].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 28 Scenario.normal_car[4].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 29 Scenario.normal_car[4].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 30 Scenario.normal_car[5].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 31 Scenario.normal_car[5].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 32 Scenario.normal_car[5].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 33 Scenario.normal_car[5].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 34 Scenario.normal_car[5].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 35 Scenario.normal_car[5].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 36 Scenario.normal_car[6].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 37 Scenario.normal_car[6].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 38 Scenario.normal_car[6].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 39 Scenario.normal_car[6].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 40 Scenario.normal_car[6].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 41 Scenario.normal_car[6].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 42 Scenario.normal_car[7].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 43 Scenario.normal_car[7].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 44 Scenario.normal_car[7].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 45 Scenario.normal_car[7].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 46 Scenario.normal_car[7].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 47 Scenario.normal_car[7].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 48 Scenario.normal_car[8].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 49 Scenario.normal_car[8].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 50 Scenario.normal_car[8].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 51 Scenario.normal_car[8].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 52 Scenario.normal_car[8].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 53 Scenario.normal_car[8].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 54 Scenario.normal_car[9].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 55 Scenario.normal_car[9].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 56 Scenario.normal_car[9].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 57 Scenario.normal_car[9].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 58 Scenario.normal_car[9].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 59 Scenario.normal_car[9].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 60 Scenario.normal_car[10].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 61 Scenario.normal_car[10].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 62 Scenario.normal_car[10].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 63 Scenario.normal_car[10].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 64 Scenario.normal_car[10].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 65 Scenario.normal_car[10].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 66 Scenario.normal_car[11].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 67 Scenario.normal_car[11].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 68 Scenario.normal_car[11].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 69 Scenario.normal_car[11].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 70 Scenario.normal_car[11].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 71 Scenario.normal_car[11].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 72 Scenario.normal_car[1].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 73 Scenario.normal_car[1].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 74 Scenario.normal_car[1].wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 75 Scenario.normal_car[1].wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 76 Scenario.normal_car[1].wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 77 Scenario.normal_car[1].wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 78 Scenario.normal_car[1].wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 79 Scenario.normal_car[1].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 80 Scenario.normal_car[2].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 81 Scenario.normal_car[2].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 82 Scenario.normal_car[2].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 83 Scenario.normal_car[2].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 84 Scenario.normal_car[4].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 85 Scenario.normal_car[4].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 86 Scenario.normal_car[4].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 87 Scenario.normal_car[4].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 88 Scenario.normal_car[4].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 89 Scenario.normal_car[4].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 90 Scenario.normal_car[4].wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 91 Scenario.normal_car[4].wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 92 Scenario.normal_car[4].wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 93 Scenario.normal_car[4].wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 94 Scenario.normal_car[4].wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 95 Scenario.normal_car[4].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 96 Scenario.normal_car[6].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 97 Scenario.normal_car[6].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 98 Scenario.normal_car[1].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 99 Scenario.normal_car[1].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 100 Scenario.normal_car[1].ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 101 Scenario.normal_car[8].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 102 Scenario.normal_car[8].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 103 Scenario.normal_car[2].wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 104 Scenario.normal_car[6].wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 105 Scenario.normal_car[1].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 106 Scenario.normal_car[1].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 107 Scenario.normal_car[8].wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 108 Scenario.normal_car[2].udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 109 Scenario.normal_car[2].wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 110 Scenario.normal_car[2].wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 111 Scenario.normal_car[2].wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 112 Scenario.normal_car[2].wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 113 Scenario.normal_car[2].wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 114 Scenario.normal_car[2].wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 115 Scenario.normal_car[6].udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 116 Scenario.normal_car[6].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 117 Scenario.normal_car[4].app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 118 Scenario.normal_car[4].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 119 Scenario.normal_car[4].app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 120 Scenario.normal_car[4].app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number, vector"
+vector 121 Scenario.normal_car[12].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 122 Scenario.normal_car[12].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 123 Scenario.normal_car[12].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 124 Scenario.normal_car[12].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 125 Scenario.normal_car[12].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 126 Scenario.normal_car[12].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 127 Scenario.normal_car[13].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 128 Scenario.normal_car[13].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 129 Scenario.normal_car[13].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 130 Scenario.normal_car[13].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 131 Scenario.normal_car[13].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 132 Scenario.normal_car[13].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 133 Scenario.normal_car[14].energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 134 Scenario.normal_car[14].energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 135 Scenario.normal_car[14].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 136 Scenario.normal_car[14].wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 137 Scenario.normal_car[14].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 138 Scenario.normal_car[14].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 139 Scenario.normal_car[0].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 140 Scenario.normal_car[0].wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 141 Scenario.normal_car[3].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 142 Scenario.normal_car[3].wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 143 Scenario.normal_car[5].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 144 Scenario.normal_car[5].wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 145 Scenario.normal_car[7].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 146 Scenario.normal_car[7].wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 147 Scenario.normal_car[9].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 148 Scenario.normal_car[9].wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 149 Scenario.normal_car[11].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 150 Scenario.normal_car[11].wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 151 Scenario.normal_car[12].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 152 Scenario.normal_car[12].wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, vector(packetBytes)"
+vector 153 Scenario.normal_car[0].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 154 Scenario.normal_car[1].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 155 Scenario.normal_car[2].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 156 Scenario.normal_car[3].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 157 Scenario.normal_car[5].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 158 Scenario.normal_car[6].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 159 Scenario.normal_car[7].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 160 Scenario.normal_car[8].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 161 Scenario.normal_car[9].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 162 Scenario.normal_car[10].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 163 Scenario.normal_car[11].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 164 Scenario.normal_car[12].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 165 Scenario.normal_car[13].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 166 Scenario.normal_car[14].app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+0	34902 783 2 1632 0.1 36.000000467037 20 -0.14391305786815 0 -2.371687104733 0.29838547412084
+1	35685 644 2 1632 0.1 36.000000467037 26 0 0.012 0.156 0.00148
+2	36329 30 2 2 0.1 0.1 3 0 4 4 16
+3	36359 634 2 1632 0.1 36.000000467037 25 0 0.012 0.156 0.00148
+4	36993 456 2 1585 0.1 35.004348391609 19 1 3 37 91
+5	37449 10 2 2 0.1 0.1 1 1 1 1 1
+6	37459 2505 2 3245 0.1 60.004348 91 -0.257153912 0 -14.4475235793 2.6014464081159
+7	39964 3831 2 3245 0.1 60.004348 190 0 0.11 5.178 0.481796
+8	43795 30 2 2 0.1 0.1 3 0 4 4 16
+9	43825 3821 2 3245 0.1 60.004348 189 0 0.11 5.178 0.481796
+10	47646 161 2 545 0.1 20.007236486371 7 1 3 13 31
+11	47807 1468 2 3245 0.1 60.004348 87 1 2 130 216
+12	49275 3861 52 3246 3.8 60.004348166295 93 -0.22628711266518 0 -12.584665786471 1.9664388864363
+13	53136 2894 52 3246 3.8 60.004348166295 101 0 0.11 0.872 0.019712
+14	56030 36 52 52 3.8 3.8 3 0 4 4 16
+15	56066 2882 52 3246 3.8 60.004348166295 100 0 0.11 0.872 0.019712
+16	58948 2323 52 3246 3.8 60.004348166295 91 1 3 181 451
+17	61271 62 52 544 3.8 20.007236328139 3 1 2 4 6
+18	61333 724 58 1702 3.9 37.000000402388 18 -0.13267827360955 0 -1.9654435974101 0.22891030741265
+19	62057 620 58 1702 3.9 37.000000402388 24 0 0.012 0.14 0.00132
+20	62677 36 58 58 3.9 3.9 3 0 4 4 16
+21	62713 608 58 1702 3.9 37.000000402388 23 0 0.012 0.14 0.00132
+22	63321 428 58 1648 3.9 36.004348316073 17 1 3 33 81
+23	63749 12 58 58 3.9 3.9 1 1 1 1 1
+24	63761 3698 113 3248 7.5 60.004348351727 89 -0.21150556940691 0 -11.024539673084 1.6044763454543
+25	67459 3012 113 3248 7.5 60.004348351727 105 0 0.102 0.928 0.0278
+26	70471 39 113 113 7.5 7.5 3 0 4 4 16
+27	70510 2999 113 3248 7.5 60.004348351727 104 0 0.102 0.928 0.0278
+28	73509 2218 113 3248 7.5 60.004348351727 87 1 3 173 431
+29	75727 113 113 496 7.5 20.004149214657 5 1 2 7 11
+30	75840 809 119 1842 7.6 39.00000040355 20 -0.1259130576142 0 -2.0296871041319 0.21916073813059
+31	76649 683 119 1842 7.6 39.00000040355 26 0 0.012 0.156 0.00148
+32	77332 39 119 119 7.6 7.6 3 0 4 4 16
+33	77371 670 119 1842 7.6 39.00000040355 25 0 0.012 0.156 0.00148
+34	78041 479 119 1788 7.6 38.004348319471 19 1 3 37 91
+35	78520 13 119 119 7.6 7.6 1 1 1 1 1
+36	78533 1115 182 1421 11.2 33.000000427213 27 -0.087485729708852 0 -1.5141860703808 0.097150291098004
+37	79648 972 182 1421 11.2 33.000000427213 36 0 0.012 0.206 0.00186
+38	80620 42 182 182 11.2 11.2 3 0 4 4 16
+39	80662 958 182 1421 11.2 33.000000427213 35 0 0.012 0.206 0.00186
+40	81620 574 182 1374 11.2 32.004348394479 23 1 3 45 111
+41	82194 14 182 182 11.2 11.2 1 1 1 1 1
+42	82208 816 189 1980 11.4 41.000000414417 20 -0.11871305765767 0 -1.8928871041385 0.19091820384931
+43	83024 688 189 1980 11.4 41.000000414417 26 0 0.012 0.156 0.00148
+44	83712 42 189 189 11.4 11.4 3 0 4 4 16
+45	83754 674 189 1980 11.4 41.000000414417 25 0 0.012 0.156 0.00148
+46	84428 478 189 1928 11.4 40.00434833218 19 1 3 37 91
+47	84906 14 189 189 11.4 11.4 1 1 1 1 1
+48	84920 264 257 514 14.9 20.004150212545 7 -0.02042127285018 0 -0.12250563461627 0.0025012718015913
+49	85184 324 257 514 14.9 20.004150212545 14 0 0.012 0.05 0.00038
+50	85508 42 257 257 14.9 14.9 3 0 4 4 16
+51	85550 310 257 514 14.9 20.004150212545 13 0 0.012 0.05 0.00038
+52	85860 114 257 508 14.9 20.004149553032 5 1 3 9 21
+53	85974 14 257 257 14.9 14.9 1 1 1 1 1
+54	85988 810 266 2116 15.1 43.000000443786 20 -0.11191305777514 0 -1.7636871045823 0.16605349933712
+55	86798 683 266 2116 15.1 43.000000443786 26 0 0.012 0.156 0.00148
+56	87481 42 266 266 15.1 15.1 3 0 4 4 16
+57	87523 669 266 2116 15.1 43.000000443786 25 0 0.012 0.156 0.00148
+58	88192 474 266 2064 15.1 42.004348358916 19 1 3 37 91
+59	88666 14 266 266 15.1 15.1 1 1 1 1 1
+60	88680 14 341 341 18.7 18.7 1 0 0 0 0
+61	88694 92 341 341 18.7 18.7 6 0 0.004 0.006 2e-05
+62	88786 42 341 341 18.7 18.7 3 0 4 4 16
+63	88828 78 341 341 18.7 18.7 5 0 0.004 0.006 2e-05
+64	88906 14 341 341 18.7 18.7 1 1 1 1 1
+65	88920 14 341 341 18.7 18.7 1 1 1 1 1
+66	88934 824 348 2250 18.8 45.000000474085 20 -0.10511305789634 0 -1.6344871049211 0.14294591480226
+67	89758 692 348 2250 18.8 45.000000474085 26 0 0.012 0.156 0.00148
+68	90450 42 348 348 18.8 18.8 3 0 4 4 16
+69	90492 678 348 2250 18.8 45.000000474085 25 0 0.012 0.156 0.00148
+70	91170 482 348 2198 18.8 44.004348384951 19 1 3 37 91
+71	91652 14 348 348 18.8 18.8 1 1 1 1 1
+72	91666 648 379 3225 20 60 41 1024 1024 41984 42991616
+73	92314 674 382 3227 20 60 42 32 1032 42344 43667008
+74	92988 713 387 3229 20.002964223082 60 43 28 1052 43212 45378352
+75	93701 713 387 3229 20.002964223082 60 43 28 1052 43212 45378352
+76	94414 1176 387 3229 20.002964223082 60 86 0 1 43 43
+77	95590 713 387 3229 20.002964223082 60 43 28 1052 43212 45378352
+78	96303 588 387 3229 20.002964223082 60 43 0 0 0 0
+79	96891 713 387 3229 20.002964223082 60 43 51 1075 44201 47388851
+80	97604 1283 402 3247 20.003312381314 60.004348166295 45 51 1075 44323 47396493
+81	98887 52 402 440 20.003312381314 20.003564725902 2 28 52 80 3488
+82	98939 26 404 404 20.003312381314 20.003312381314 1 32 32 32 1024
+83	98965 25 404 404 20.003312381314 20.003312381314 1 1 1 1 1
+84	98990 1228 407 3249 20.003312553607 60.004348351727 43 51 1075 44201 47388851
+85	100218 1228 407 3249 20.003312553607 60.004348351727 43 28 1052 43212 45378352
+86	101446 1202 409 3251 20.003312553607 60.004348351727 42 32 1032 42344 43667008
+87	102648 1111 409 3251 20.003312553607 60.004348351727 42 1 42 903 25585
+88	103759 26 411 411 20.003312553607 20.003312553607 1 28 28 28 784
+89	103785 26 412 412 20.003312553607 20.003312553607 1 28 28 28 784
+90	103811 52 413 474 20.003312553607 20.003817214657 2 28 48 76 3088
+91	103863 52 413 474 20.003312553607 20.003817214657 2 28 48 76 3088
+92	103915 100 413 474 20.003312553607 20.003817214657 4 0 1 2 2
+93	104015 52 413 474 20.003312553607 20.003817214657 2 28 48 76 3088
+94	104067 50 413 474 20.003312553607 20.003817214657 2 0 0 0 0
+95	104117 52 413 474 20.003312553607 20.003817214657 2 51 71 122 7642
+96	104169 307 437 1375 20.003564723366 32.004348394479 11 51 1075 8797 9258267
+97	104476 51 437 552 20.003564723366 20.00723666982 2 28 52 80 3488
+98	104527 78 443 546 20.003564884132 20.007236486371 3 51 75 197 13267
+99	104605 78 443 546 20.003564884132 20.007236486371 3 28 52 128 5792
+100	104683 27 444 444 20.003564884132 20.003564884132 1 28 28 28 784
+101	104710 54 448 509 20.003564891982 20.004149553032 2 51 71 122 7642
+102	104764 27 448 448 20.003564891982 20.003564891982 1 28 28 28 784
+103	104791 1274 470 3247 20.003817042364 60.004348166295 43 51 1075 44197 47388267
+104	106065 265 498 1375 20.004149384416 32.004348394479 9 71 1075 8671 9250041
+105	106330 54 504 548 20.004149545182 20.007236486371 2 28 32 60 1808
+106	106384 52 504 548 20.004149545182 20.007236486371 2 1 2 3 5
+107	106436 27 509 509 20.004149553032 20.004149553032 1 71 71 71 5041
+108	106463 27 529 529 20.006888328139 20.006888328139 1 32 32 32 1024
+109	106490 27 531 531 20.006888328139 20.006888328139 1 52 52 52 2704
+110	106517 27 531 531 20.006888328139 20.006888328139 1 52 52 52 2704
+111	106544 52 531 531 20.006888328139 20.006888328139 2 0 1 1 1
+112	106596 27 531 531 20.006888328139 20.006888328139 1 52 52 52 2704
+113	106623 26 531 531 20.006888328139 20.006888328139 1 0 0 0 0
+114	106649 27 531 531 20.006888328139 20.006888328139 1 75 75 75 5625
+115	106676 26 554 554 20.00723666982 20.00723666982 1 32 32 32 1024
+116	106702 25 554 554 20.00723666982 20.00723666982 1 1 1 1 1
+117	106727 1217 571 3252 20.008497875707 60.004348351727 41 1024 1024 41984 42991616
+118	107944 9365 571 3280 0.1 60.5 605 0 81920 3358720 275146342400
+119	117309 1621 571 3252 20.008497875707 60.004348351727 41 0.004348218823 0.008497875707 0.182431483055 0.0008285363857754
+120	118930 1125 571 3252 20.008497875707 60.004348351727 41 0 40 820 22140
+121	120055 849 709 2382 22.5 47.000000488941 20 -0.098313057955764 0 -1.5052871050693 0.12159545021504
+122	120904 718 709 2382 22.5 47.000000488941 26 0 0.012 0.156 0.00148
+123	121622 45 709 709 22.5 22.5 3 0 4 4 16
+124	121667 703 709 2382 22.5 47.000000488941 25 0 0.012 0.156 0.00148
+125	122370 501 709 2335 22.5 46.004348397023 19 1 3 37 91
+126	122871 15 709 709 22.5 22.5 1 1 1 1 1
+127	122886 15 709 709 22.5 22.5 1 0 0 0 0
+128	122901 98 709 709 22.5 22.5 6 0 0.004 0.006 2e-05
+129	122999 45 709 709 22.5 22.5 3 0 4 4 16
+130	123044 83 709 709 22.5 22.5 5 0 0.004 0.006 2e-05
+131	123127 15 709 709 22.5 22.5 1 1 1 1 1
+132	123142 15 709 709 22.5 22.5 1 1 1 1 1
+133	123157 15 969 969 26.2 26.2 1 0 0 0 0
+134	123172 98 969 969 26.2 26.2 6 0 0.004 0.006 2e-05
+135	123270 45 969 969 26.2 26.2 3 0 4 4 16
+136	123315 83 969 969 26.2 26.2 5 0 0.004 0.006 2e-05
+137	123398 15 969 969 26.2 26.2 1 1 1 1 1
+138	123413 15 969 969 26.2 26.2 1 1 1 1 1
+139	123428 268 1021 1586 27.004348325684 35.004348391609 9 1075 1075 9675 10400625
+140	123696 268 1021 1586 27.004348325684 35.004348391609 9 1075 1075 9675 10400625
+141	123964 240 1159 1649 29.004348323461 36.004348316073 8 1075 1075 8600 9245000
+142	124204 240 1159 1649 29.004348323461 36.004348316073 8 1075 1075 8600 9245000
+143	124444 269 1231 1789 30.004348379829 38.004348319471 9 1075 1075 9675 10400625
+144	124713 269 1231 1789 30.004348379829 38.004348319471 9 1075 1075 9675 10400625
+145	124982 268 1373 1929 32.004348369493 40.00434833218 9 1075 1075 9675 10400625
+146	125250 268 1373 1929 32.004348369493 40.00434833218 9 1075 1075 9675 10400625
+147	125518 266 1515 2065 34.00434836942 42.004348358916 9 1075 1075 9675 10400625
+148	125784 266 1515 2065 34.00434836942 42.004348358916 9 1075 1075 9675 10400625
+149	126050 270 1651 2199 36.004348357076 44.004348384951 9 1075 1075 9675 10400625
+150	126320 270 1651 2199 36.004348357076 44.004348384951 9 1075 1075 9675 10400625
+151	126590 270 1791 2336 38.004348346666 46.004348397023 9 1075 1075 9675 10400625
+152	126860 270 1791 2336 38.004348346666 46.004348397023 9 1075 1075 9675 10400625
+153	127130 9461 3280 3280 0.1 60.5 605 0 0 0 0
+154	136591 9461 3280 3280 0.1 60.5 605 0 0 0 0
+155	146052 9461 3280 3280 0.1 60.5 605 0 0 0 0
+156	155513 9461 3280 3280 0.1 60.5 605 0 0 0 0
+157	164974 9461 3280 3280 0.1 60.5 605 0 0 0 0
+158	174435 9461 3280 3280 0.1 60.5 605 0 0 0 0
+159	183896 9461 3280 3280 0.1 60.5 605 0 0 0 0
+160	193357 9461 3280 3280 0.1 60.5 605 0 0 0 0
+161	202818 9461 3280 3280 0.1 60.5 605 0 0 0 0
+162	212279 9461 3280 3280 0.1 60.5 605 0 0 0 0
+163	221740 9461 3280 3280 0.1 60.5 605 0 0 0 0
+164	231201 9461 3280 3280 0.1 60.5 605 0 0 0 0
+165	240662 9461 3280 3280 0.1 60.5 605 0 0 0 0
+166	250123 9461 3280 3280 0.1 60.5 605 0 0 0 0
+

@@ -1,0 +1,3 @@
+package networkprojectvanet;
+
+@license(LGPL);

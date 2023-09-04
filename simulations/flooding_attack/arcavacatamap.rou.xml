@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-04-22 12:30:44 by Eclipse SUMO duarouter Version 1.11.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="arcavacatamap.net.xml"/>
+        <route-files value="arcavacatamap.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="arcavacatamap.rou.xml"/>
+        <alternatives-output value="arcavacatamap.rou.alt.xml"/>
+    </output>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+	<vType id="normal_car" accel="2.6" decel="4.5" sigma="0.5" length="4.5" minGap="10" maxSpeed="14" color="1,1,0"/>
+	<vType id="attacker_car" accel="2.6" decel="4.5" sigma="0.5" length="4.5" minGap="10" maxSpeed="14" color="1,0,0"/>
+
+	<route id="route0" edges="45849800#5 45849800#6 45849800#7 120516818#1 120516818#2 120516818#3 120516818#4 120516818#5 121823451 30924737#3 31143664 121823473 30924737#5 30924737#6 30924737#7 121823462 -30504149#8 -30504149#7 -30504149#6 -30504149#3 -30504149#2 -30504149#1 -30504149#0 30898807#0 30898807#1"/>
+	<route id="route1" edges="-121823456#2 -121823456#1 -121823456#0 121823452 30924737#7 30924737#0 30924737#1 121823455 -120516818#5 -120516818#4 -120516818#3 -120516818#2 -120516818#1 -120516818#0 -45849800#6 -45849800#5 -45849800#4 -45849800#3 -45849800#2 -45849800#1"/>
+	
+	<flow id="normal_car_flow0" type="normal_car" route="route0" begin="0" period="0.6" number="7" arrivalPos="-1" />
+	<flow id="normal_car_flow1" type="normal_car" route="route1" begin="0" period="0.6" number="7" arrivalPos="-1" />
+	<flow id="attacker_car_flow" type="attacker_car" route="route1" begin="0" period="1.5" number="1" arrivalPos="-1" />
+</routes>

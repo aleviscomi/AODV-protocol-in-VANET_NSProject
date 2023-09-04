@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+    <copy file="arcavacatamap.net.xml" />
+    <copy file="arcavacatamap.rou.xml" />
+    <copy file="arcavacatamap.sumocfg" type="config" />
+</launch>
+

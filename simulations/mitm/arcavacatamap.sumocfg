@@ -1,0 +1,25 @@
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="arcavacatamap.net.xml"/>
+        <route-files value="arcavacatamap.rou.xml"/>
+    </input>
+
+    <time>
+        <step-length value="0.1"/>
+    </time>
+
+    <processing>
+        <lanechange.duration value="1.5"/>
+    </processing>
+
+    <report>
+        <xml-validation value="never"/>
+        <xml-validation.net value="never"/>
+    </report>
+
+    <gui_only>
+        <start value="true"/>
+    </gui_only>
+
+</configuration>
